@@ -24,7 +24,7 @@ Example:
 ``docker run --rm -p 8787:8787 -e PASSWORD=hellofuture -v C:/Users/offic/MS/FALL2021/BIOS611/bios-611-project:/home/rstudio/work -t dockerfile``
 
 ## How do I conduct the analysis and construct the report?
-To create the bios-611-project-report pdf, run the following commands in your R terminal.
+To create the bios-611-project-report pdf, run the following commands in your R terminal. Make sure you are running these commands from the ``/work`` folder once you have brought up the Rstudio image.
 
 ``make derived_data/hmdata.csv``
 
