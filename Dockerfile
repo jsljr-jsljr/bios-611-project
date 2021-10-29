@@ -1,0 +1,17 @@
+FROM rocker/verse
+MAINTAINER Jose Santos Lopez <jsljr@ad.unc.edu>
+RUN R -e "install.packages(\"tidyverse\")"
+RUN R -e "install.packages(\"tidytext\")"
+RUN R -e "install.packages(\"gtsummary\")"
+RUN R -e "install.packages(\"gt\")"
+RUN R -e "install.packages(\"flextable\")"
+RUN R -e "install.packages(\"lubridate\")"
+RUN R -e "install.packages(\"kableExtra\")"
+RUN R -e "install.packages(\"ggridges\")"
+RUN R -e "install.packages(\"broom\")"
+RUN R -e "install.packages(\"GGally\")"
+RUN R -e "install.packages(\"scales\")"
+RUN R -e "install.packages(\"ggpubr\")"
+RUN R -e "install.packages(\"caret\")"
+RUN R -e "install.packages(\"rpart\")"
+RUN R -e "install.packages(\"randomForest\")"
