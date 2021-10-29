@@ -9,4 +9,42 @@ This analysis is based derived from IMDB first put on Kaggle and then hosted on 
 If you wish to replicate this exact analysis, please utilize the csvs located in the source_data folder of this repository.
 
 ## How do I build the docker image?
+Run the following commands to set up a docker image. Note for the second command, you should insert your own unique password and change the path in the command to the bios-611-project folder in your directory. Refer to Commands.md for more commands.
+
+Command to build docker image:
+
+``docker build . -t project01-env``
+
+Command to run docker image (RStudio):
+
+``docker run --rm -p 8787:8787 -e PASSWORD=<insert your own unique password> -v <insert path to bios-611-project folder>:/home/rstudio/work -t project01-env``
+
+Example:
+
+``docker run --rm -p 8787:8787 -e PASSWORD=hellofuture -v C:/Users/offic/MS/FALL2021/BIOS611/bios-611-project:/home/rstudio/work -t project01-env``
+
+## How do I conduct the analysis and construct the report?
+To create the bios-611-project-report pdf, run the following commands in your R terminal.
+
+make derived_data/hmdata.csv
+
+make figures/table_1.png
+
+make figures/figure_1.png
+
+make figures/figure_2.png
+
+make figures/figure_3.png
+
+make analysis/knn_table.png
+
+These commands will create the relevant datasets, figures, and analysis tables.
+
+## How do I construct the Rshiny app?
+
+Run the following command in your rstudio terminal to run the rshiny app.
+
+``PORT=8788 make shiny_app``
+
+Open a new tab in your browser to http:/localhost:8788 and the app will be available to interact with.
 
