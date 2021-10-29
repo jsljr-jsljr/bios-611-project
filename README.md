@@ -13,32 +13,42 @@ Run the following commands to set up a docker image. Note for the second command
 
 Command to build docker image:
 
-``docker build . -t project01-env``
+``docker build . -t dockerfile``
 
 Command to run docker image (RStudio):
 
-``docker run --rm -p 8787:8787 -e PASSWORD=<insert your own unique password> -v <insert path to bios-611-project folder>:/home/rstudio/work -t project01-env``
+``docker run --rm -p 8787:8787 -e PASSWORD=<insert your own unique password> -v <insert path to bios-611-project folder>:/home/rstudio/work -t dockerfile``
 
 Example:
 
-``docker run --rm -p 8787:8787 -e PASSWORD=hellofuture -v C:/Users/offic/MS/FALL2021/BIOS611/bios-611-project:/home/rstudio/work -t project01-env``
+``docker run --rm -p 8787:8787 -e PASSWORD=hellofuture -v C:/Users/offic/MS/FALL2021/BIOS611/bios-611-project:/home/rstudio/work -t dockerfile``
 
 ## How do I conduct the analysis and construct the report?
 To create the bios-611-project-report pdf, run the following commands in your R terminal.
 
-make derived_data/hmdata.csv
+``make derived_data/hmdata.csv``
 
-make figures/table_1.png
+``make figures/table_1.png``
 
-make figures/figure_1.png
+``make figures/figure_1.png``
 
-make figures/figure_2.png
+``make figures/figure_2.png``
 
-make figures/figure_3.png
+``make figures/figure_3.png``
 
-make analysis/knn_table.png
+``make figures/figure_4.png``
 
-These commands will create the relevant datasets, figures, and analysis tables.
+``make figures/figure_5.png``
+
+``make figures/figure_6.png``
+
+``make figures/figure_7.png``
+
+``make figures/figure_8.png``
+
+``make analysis/knn_table.png``
+
+These commands will create the relevant datasets, figures, and analysis tables. Note that any one of the ``make figures/figure_i.png`` or  ``make figures/table_1.png`` will generate all figures and the table.
 
 ## How do I construct the Rshiny app?
 
