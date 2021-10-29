@@ -71,7 +71,7 @@ p1 = p1 + scale_fill_viridis_d(option="inferno")
 
 p1
 
-ggsave("figures/figure_1", p1)
+ggsave("figures/figure_1.png", p1)
 
 p2 = ggplot(hmdata_5, aes(x = month, fill = as.factor(yr)))
 
@@ -83,7 +83,7 @@ p2 = p2 + scale_fill_viridis_d(option="inferno")
 
 p2
 
-ggsave("figures/figure_2", p2)
+ggsave("figures/figure_2.png", p2)
 
 p3 = ggplot(hmdata_5, aes(x = month, fill = as.factor(num_of_genres_c6)))
 
@@ -95,7 +95,7 @@ p3 = p3 + scale_fill_viridis_d(option="inferno")
 
 p3
 
-ggsave("figures/figure_3", p3)
+ggsave("figures/figure_3.png", p3)
 
 #----------------------------------#
 #--------- Figures 4, 5, 6 --------#
@@ -112,7 +112,7 @@ p4 <- hmdata_5 %>% filter(sub_genre!="Pure") %>%
 
 p4
 
-ggsave("figures/figure_4", p4)
+ggsave("figures/figure_4.png", p4)
 
 p5 = ggplot(hmdata_5, aes(x = yr, y = review_rating, fill = as.factor(yr)))
 
@@ -123,7 +123,7 @@ p5 = p5 + geom_boxplot(alpha = .75) +
 
 p5
 
-ggsave("figures/figure_5", p5)
+ggsave("figures/figure_5.png", p5)
 
 p6 = ggplot(hmdata_5, aes(x = num_of_genres_c6, y = review_rating, fill = num_of_genres_c6))
 
@@ -134,7 +134,7 @@ p6 = p6 + geom_boxplot(alpha = .75) +
 
 p6
 
-ggsave("figures/figure_6", p6)
+ggsave("figures/figure_6.png", p6)
 
 #----------------------------------#
 #--------- Figures 7 & 8 ----------#
@@ -149,7 +149,7 @@ p7 = p7 + geom_point() + facet_wrap(~yr, ncol=1, nrow=6) +
 
 p7
 
-ggsave("figures/figure_7", p7)
+ggsave("figures/figure_7.png", p7)
 
 p8 = ggplot(hmdata_5 %>% filter(!is.na(budget_num)) %>% filter(!is.na(review_rating)), aes(x = budget_num, y = review_rating, color = yr))
 
@@ -162,4 +162,4 @@ p8 = p8 + geom_point() + scale_x_log10() +
 
 p8
 
-ggsave("figures/figure_7", p7)
+ggsave("figures/figure_8", p8)
