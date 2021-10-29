@@ -162,4 +162,4 @@ p8 = p8 + geom_point() + scale_x_log10() +
 
 p8
 
-ggsave("figures/figure_8", p8)
+ggsave("figures/figure_8.png", p8)
