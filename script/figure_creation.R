@@ -48,7 +48,7 @@ table_1a_01 <- tbl_summary(data = hmdata_5,
   add_header_lines(values = "Summary Statistics for Review Rating Machine Learning Variables of Interest")
 
 save_as_image(table_1a_01, 
-              "C:/Users/offic/MS/FALL2021/BIOS611/project/table_1.png", 
+              "figures/table_1.png", 
               expand=10, 
               webshot = "webshot")
 
