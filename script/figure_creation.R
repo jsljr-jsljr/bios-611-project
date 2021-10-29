@@ -15,7 +15,7 @@ library(ggpubr);
 library(webshot);
 webshot::install_phantomjs(force = TRUE)
 
-hmdata <- read_csv("derived_data/hmdata.csv", col_types = cols())
+hmdata_5 <- read_csv("derived_data/hmdata.csv", col_types = cols())
 
 #---------------------------#
 #--------- Table 1 ---------#
@@ -57,7 +57,7 @@ save_as_image(table_1a_01,
 #----------------------------------#
 
 hmdata_5$month = factor(hmdata_5$month,
-                        levels = c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "NA"))
+                        levels = c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", "NA"))
 
 p1 = ggplot(hmdata_5, aes(x = month, fill = sub_genre))
 
