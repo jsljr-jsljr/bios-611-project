@@ -12,6 +12,8 @@ library(flextable);
 library(gtsummary);
 library(gt);
 library(broom);
+library(webshot);
+webshot::install_phantomjs(force = TRUE)
 
 #Creating analysis data set
 hmdata <- read_csv("derived_data/hmdata.csv", show_col_types = FALSE) %>% 
@@ -58,6 +60,16 @@ for(f in 1:length(tt_knn_indices_100)){
 
 knn_accuracy_df <- data.frame(do.call("rbind", accuracy_knn_fit_rates_100)) %>% select(Sensitivity, Specificity, Recall, Precision, F1)
 
-as_tibble(t(sapply(knn_accuracy_df, mean)))
+measure_means <- flextable(as.data.frame(t(sapply(knn_accuracy_df, mean))))
 
-as_tibble(t(sapply(knn_accuracy_df, sd)))
+save_as_image(measure_means, 
+              "analysis/table_measures_means.png", 
+              expand=10, 
+              webshot = "webshot")
+
+measure_stds <- flextable(as.data.frame((t(sapply(knn_accuracy_df, sd)))))
+
+save_as_image(measure_stds, 
+              "analysis/table_measures_stds.png", 
+              expand=10, 
+              webshot = "webshot")
