@@ -7,7 +7,10 @@ library(tidyverse)
 library(shiny)
 library(plotly)
 
-hmdata_5 <- read_csv("derived_data/hmdata.csv", col_types = cols())
+hmdata <- read_csv("/home/rstudio/work/derived_data/hmdata.csv", col_types = cols()) %>%
+          select(-title, -genres, -release_date, -release_country, 
+                 -plot, -cast, -language, -filming_locations, -date,
+                 -review_vs_median, -movie_lead, -num_of_genres, -budget)
 
 ui <- fluidPage(
   selectInput("choice", "Choose", choices = names(hmdata), selected = NULL),
@@ -22,4 +25,4 @@ server <- function(input, output, session){
 }
 
 shinyApp(ui=ui, server=server,
-         options=list(port=8080, host="0.0.0.0"));
+         options=list(port=8080, host="0.0.0.0"))
