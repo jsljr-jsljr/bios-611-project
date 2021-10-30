@@ -34,3 +34,8 @@ figures/figure_8.png:  derived_data/hmdata.csv
 
 figures/table_1.png:  derived_data/hmdata.csv
 	Rscript script/figure_creation.R
+
+.PHONY: shiny_app
+# Make target for Rshiny interactive scatter plot
+shiny_app: derived_data/hmdata.csv script/shiny_app_01.R
+	Rscript script/shiny_app_01.R ${PORT}
