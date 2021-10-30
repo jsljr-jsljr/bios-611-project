@@ -17,11 +17,11 @@ Command to build docker image:
 
 Command to run docker image (RStudio):
 
-``docker run --rm -p 8787:8787 -e PASSWORD=<insert your own unique password> -v <insert path to bios-611-project folder>:/home/rstudio/work -t dockerfile``
+``docker run --rm -p 8080:8080 -p 8787:8787 -e PASSWORD=<insert your own unique password> -v <insert path to bios-611-project folder>:/home/rstudio/work -t dockerfile``
 
 Example:
 
-``docker run --rm -p 8787:8787 -e PASSWORD=hellofuture -v C:/Users/offic/MS/FALL2021/BIOS611/bios-611-project:/home/rstudio/work -t dockerfile``
+``docker run --rm -p 8080:8080 -p 8787:8787 -e PASSWORD=hellofuture -v C:/Users/offic/MS/FALL2021/BIOS611/bios-611-project:/home/rstudio/work -t dockerfile``
 
 ## How do I conduct the analysis and construct the report?
 To create the bios-611-project-report pdf, run the following commands in your R terminal. Make sure you are running these commands from the ``/work`` folder once you have brought up the Rstudio image.
