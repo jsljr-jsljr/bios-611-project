@@ -1,5 +1,7 @@
 # README
 
+:construction: Note that this project is still underconstruction and data needs further cleaned and modified correctly. For example, recently it has been discovered that budgets must also be modified such that are all changed to one currency. :construction:
+
 ## What does this project contain?
 This repository contains the data, code, and results of an analysis of horror movie ratings of horror movies that were released between the years of 2012 and 2017 (horror movies include theatrical, television, and ancillary market releases). The motivation is simply an interest in horror movies and wondering whether there are any factors that give a good indication that a horror movie will be reviewed better than others!
 
