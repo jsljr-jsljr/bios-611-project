@@ -4,6 +4,10 @@ clean:
 	rm -f derived_data/*
 	rm -f figures/*
 	rm -f analysis/*
+	rm -f report.pdf
+
+report.pdf: report.Rmd figures/table_1.png figures/figure_1.png figures/figure_2.png figures/figure_3.png figures/figure_4.png figures/figure_5.png figures/figure_6.png figures/figure_7.png figures/figure_8.png
+	R -e "rmarkdown::render('report.Rmd',output_format='pdf_document')"
 
 derived_data/hmdata.csv: source_data/horror_movies.csv
 	Rscript script/hmdata_creation.R
