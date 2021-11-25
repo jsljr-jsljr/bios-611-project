@@ -1,0 +1,32 @@
+---
+title: "Report"
+author: "Jose S. Lopez"
+date: "11/25/2021"
+output: html_document
+---
+
+# Introduction
+
+While corresponding experts of a product have provided reviews for many years, reviews being provided by laypeople have become the new norm in the digital era. Multiple platforms have been conducive for the average individual to provide their opinions. Social media platforms for example allow individuals and laypeople to post about their opinions about a movie. However, there are also movie, tv, and streaming specific websites that center around reviews like Rotten Tomatoes and IMDB. In fact, IMDB is the movie review website from which the data we use is derived from. From a academic research perspective there has an explosion of rich data that has come from the movie industry.
+
+> The motion picture industry has become fertile ground for the application of new product forecasting and prerelease market evaluation models given the high stakes and high risks in producing and marketing a movie, with only three or four out of ten breaking even, and around one in ten becoming profitable at the box office. (Peng, Gui, and Li 2013).
+
+High risks and high stakes coupled with the increasing amount of money the movie industry has been accumulating means there is room to advance and develop statistical methodology that is also applicable. Past research has previously shown that movie review "ratings are associated with movie performance, as measured by both movie revenues and viewer satisfaction" (Moon, Bergey, and Iacobucci 2010). Here we focus on review ratings of horror movies and only consider an application of k-nearest neighbor (KNN) to determine whether a movie is *good* or *bad*.
+
+# Dataset Description
+
+
+
+# Analysis Procedures
+
+
+
+# Conclusion
+
+
+
+# References
+
+Moon, S., Bergey, P. K., & Iacobucci, D. (2010). Dynamic Effects among Movie Ratings, Movie Revenues, and Viewer Satisfaction. Journal of Marketing, 74(1), 108–121. http://www.jstor.org/stable/20619083
+
+Peng, L., Cui, G., & Li, C. (2013). The Comparative Impact of Critics and Consumers: Applying the Generalisability Theory to Online Movie Ratings. International Journal of Market Research, 55(3), 413–436. https://doi.org/10.2501/IJMR-2013-037
