@@ -14,7 +14,9 @@ library(scales);
 library(ggpubr);
 library(webshot);
 
-hmdata_5 <- read_csv("derived_data/hmdata.csv", col_types = cols())
+hmdata_5 <- read_csv("work/derived_data/hmdata.csv", col_types = cols())
+
+view(hmdata_5)
 
 #---------------------------#
 #--------- Table 1 ---------#
@@ -57,9 +59,10 @@ save_as_image(table_1a_01,
 
 Variable <- c('Title', 'Genres', 'Release date', 'Release country',
               'MPAA rating', 'Review rating', 'Movie run time', 'Plot', 'Cast', 
-              'Language', 'Filming locations', 'Budget')
+              'Language', 'Filming locations', 'Budget', 'Number of genres', 'Budget number', 
+              'Date', 'Month', 'Year', 'Review versus median', 'Movie lead', 'Subgenre', '6 category number of genres')
 
-table_2 <- cbind(Variable, as.data.frame(sapply(hmdata, function(x) sum(is.na(x)))))
+table_2 <- cbind(Variable, as.data.frame(sapply(hmdata_5, function(x) sum(is.na(x)))))
 
 table_2 <- flextable(table_2) %>% 
            set_header_labels('sapply(hmdata, function(x) sum(is.na(x)))' = 'Counts') %>%

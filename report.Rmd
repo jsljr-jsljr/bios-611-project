@@ -21,11 +21,15 @@ The data set was not without missing data and columns of data that needed modifi
 
 # Analysis Procedures
 
+## Exploration
 
+## KNN Analysis
 
 # Discussion
 
-While there was little determined from this analysis there is much to be explored using the data set. For example the plot variable could be text mined for common words among all plot values. We could then use this variable as feature in the prediction model. The plot variable also contains the director of movies so that could be used as an index for whether a particular movie will be reviewed based on their past history. The same could be done using the cast variable except you apply indices for the cast of the movie. Furthermore, different algorithms could be better suited for prediction. 
+While there was little determined from this analysis there is much to be explored using the data set. For example the plot variable could be text mined for common words among all plot values. We could then use this variable as feature in the prediction model. The plot variable also contains the director of movies so that could be used as an index for whether a particular movie will be reviewed based on their past history. The same could be done using the cast variable except you apply indices for the cast of the movie. Furthermore, different algorithms could be better suited for prediction.
+
+M
 
 # References
 
