@@ -36,7 +36,7 @@ predicted_knn_fit_outcome_100 <- list()
 accuracy_knn_fit_rates_100 <- list()
 knn_table <- list()
 
-tt_knn_indices_100 <- createFolds(y=hmdata$review_bin, k=5)
+tt_knn_indices_100 <- createFolds(y=hmdata$review_bin, k=100)
 
 for(f in 1:length(tt_knn_indices_100)){
   hmdata_knn_train_100 <- hmdata[-tt_knn_indices_100[[f]],]
