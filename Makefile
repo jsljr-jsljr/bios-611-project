@@ -24,7 +24,7 @@ figures/figure_3.png: derived_data/hmdata.csv
 figures/figure_4.png: derived_data/hmdata.csv
 	Rscript script/figure_creation.R
 
-figures/figure_5.png: dervied_data/hmdata.csv
+figures/figure_5.png: derived_data/hmdata.csv
 	Rscript script/figure_creation.R
 
 figures/figure_6.png: derived_data/hmdata.csv
