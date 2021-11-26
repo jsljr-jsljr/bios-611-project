@@ -13,7 +13,6 @@ library(gtsummary);
 library(gt);
 library(broom);
 library(webshot);
-webshot::install_phantomjs(force = TRUE)
 
 #Creating analysis data set
 hmdata <- read_csv("derived_data/hmdata.csv", show_col_types = FALSE) %>% 
