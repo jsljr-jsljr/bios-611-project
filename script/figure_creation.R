@@ -44,10 +44,29 @@ table_1a_01 <- tbl_summary(data = hmdata_5,
                     all_categorical() ~ "chisq.test")) %>%
   as_flex_table() %>%
   bold(bold = TRUE, part = "header") %>%
-  add_header_lines(values = "Summary Statistics for Review Rating Machine Learning Variables of Interest")
+  add_header_lines(values = "Table 1. Summary Statistics for Review Rating Machine Learning Variables of Interest")
 
 save_as_image(table_1a_01, 
               "figures/table_1.png", 
+              expand=10, 
+              webshot = "webshot")
+
+#---------------------------#
+#--------- Table 2 ---------#
+#---------------------------#
+
+Variable <- c('Title', 'Genres', 'Release date', 'Release country',
+              'MPAA rating', 'Review rating', 'Movie run time', 'Plot', 'Cast', 
+              'Language', 'Filming locations', 'Budget')
+
+table_2 <- cbind(Variable, as.data.frame(sapply(hmdata, function(x) sum(is.na(x)))))
+
+table_2 <- flextable(table_2) %>% 
+           set_header_labels('sapply(hmdata, function(x) sum(is.na(x)))' = 'Counts') %>%
+           add_header_lines('Table 2. Missing counts for cleaned data set')
+
+save_as_image(table_2, 
+              "figures/table_2.png", 
               expand=10, 
               webshot = "webshot")
 

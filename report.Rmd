@@ -1,5 +1,5 @@
 ---
-title: "Report"
+title: "BIOS 611 Project Report"
 author: "Jose S. Lopez"
 date: "11/25/2021"
 output: html_document
@@ -11,10 +11,13 @@ While corresponding experts of a product have provided reviews for many years, r
 
 > The motion picture industry has become fertile ground for the application of new product forecasting and prerelease market evaluation models given the high stakes and high risks in producing and marketing a movie, with only three or four out of ten breaking even, and around one in ten becoming profitable at the box office. (Peng, Gui, and Li 2013).
 
-High risks and high stakes coupled with the increasing amount of money the movie industry has been accumulating means there is room to advance and develop statistical methodology that is also applicable. Past research has previously shown that movie review "ratings are associated with movie performance, as measured by both movie revenues and viewer satisfaction" (Moon, Bergey, and Iacobucci 2010). Here we focus on review ratings of horror movies and only consider an application of k-nearest neighbor (KNN) to determine whether a movie is *good* or *bad*.
+High risks and high stakes coupled with the increasing amount of money the movie industry has been accumulating means there is room to advance and develop statistical methodology that is also applicable. Past research has previously shown that movie review "ratings are associated with movie performance, as measured by both movie revenues and viewer satisfaction" (Moon, Bergey, and Iacobucci 2010). Here we focus on exploration of a horror movie data set and consider an application of k-nearest neighbor (KNN) to predict whether a horror movie will be considered good or bad.
 
 # Dataset Description
 
+The data used in this analysis is derived from IMDB, was put on Kaggle and then hosted on https://github.com/rfordatascience/tidytuesday where I sourced the data from. The data contains information on 3,328 different horror movies. Examples of included properties are genre(s), release date, release country, MPAA rating, and movie run time (in minutes). The data consists of 12 columns, 11 of which pertain to movie properties, and the remaining 1 column pertains to what is considered the outcome in the analysis - the review rating (which ranged from 1 to 10).
+
+The data set was not without missing data and columns of data that needed modification in order to be used for analysis. To begin all observations that had a missing review ratings were removed as it is our outcome of interest. 
 
 
 # Analysis Procedures

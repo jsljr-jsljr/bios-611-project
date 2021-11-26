@@ -12,11 +12,11 @@ library(flextable)
 library(kableExtra)
 library(gt)
 
-hmdata <- read_csv("source_data/horror_movies.csv", col_types = cols()) %>%
+hmdata <- read_csv("work/source_data/horror_movies.csv", col_types = cols()) %>%
           distinct(.) %>% 
-          filter(!is.na(review_rating))
-
-# sapply(hmdata, function(x) sum(is.na(x)))
+          filter(!is.na(review_rating)) %>%
+          filter(release_country=='USA') %>%
+          filter(substr(budget,1,1)=='$' | is.na(budget))
 
 list_of_num_of_genres <- str_split(hmdata$genres, "[|]")
 
