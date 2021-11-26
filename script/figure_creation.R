@@ -14,7 +14,7 @@ library(scales);
 library(ggpubr);
 library(webshot);
 
-hmdata_5 <- read_csv("work/derived_data/hmdata.csv", col_types = cols())
+hmdata_5 <- read_csv("derived_data/hmdata.csv", col_types = cols())
 
 view(hmdata_5)
 
