@@ -16,8 +16,6 @@ library(webshot);
 
 hmdata_5 <- read_csv("derived_data/hmdata.csv", col_types = cols())
 
-view(hmdata_5)
-
 #---------------------------#
 #--------- Table 1 ---------#
 #---------------------------#
@@ -90,6 +88,8 @@ p1 = p1 + theme(legend.key.size = unit(0.5, 'cm'))
 
 p1 = p1 + scale_fill_viridis_d(option="inferno")
 
+p1 = p1 + theme(axis.text.x=element_text(size=11, angle=30, vjust=.8, hjust=0.8))
+
 p1
 
 ggsave("figures/figure_1.png", p1)
@@ -102,6 +102,8 @@ p2 = p2 + labs(x = "Release Month", y = "Count", fill = 'Year')
 
 p2 = p2 + scale_fill_viridis_d(option="inferno")
 
+p2 = p2 + theme(axis.text.x=element_text(size=11, angle=30, vjust=.8, hjust=0.8))
+
 p2
 
 ggsave("figures/figure_2.png", p2)
@@ -113,6 +115,8 @@ p3 = p3 + geom_bar() + ggtitle("Figure 1.c. Counts of Films by Release Month dis
 p3 = p3 + labs(x = "Release Month", y = "Count", fill = 'No. of Genres')
 
 p3 = p3 + scale_fill_viridis_d(option="inferno")
+
+p3 = p3 + theme(axis.text.x=element_text(size=11, angle=30, vjust=.8, hjust=0.8))
 
 p3
 

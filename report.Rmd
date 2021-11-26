@@ -23,6 +23,8 @@ The data set was not without missing data and columns of data that needed modifi
 
 ## Exploration
 
+![](/figures/table_1.png)
+![](/figures/table_2.png)
 
 
 ## KNN Analysis
