@@ -16,5 +16,6 @@ RUN R -e "install.packages(\"caret\")"
 RUN R -e "install.packages(\"rpart\")"
 RUN R -e "install.packages(\"randomForest\")"
 RUN R -e "install.packages(\"webshot\")"
+RUN R -e "webshot::install_phantomjs(force = TRUE)"
 RUN R -e "install.packages(\"plotly\")"
 
