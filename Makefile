@@ -33,10 +33,13 @@ figures/figure_6.png: derived_data/hmdata.csv
 figures/figure_7.png: derived_data/hmdata.csv
 	Rscript script/figure_creation.R
 
-figures/figure_8.png:  derived_data/hmdata.csv
+figures/figure_8.png: derived_data/hmdata.csv
 	Rscript script/figure_creation.R
 
-figures/table_1.png:  derived_data/hmdata.csv
+figures/table_1.png: derived_data/hmdata.csv
+	Rscript script/figure_creation.R
+
+figures/table_2.png: derived_data/hmdata.csv
 	Rscript script/figure_creation.R
 
 analysis/knn_table.png: derived_data/hmdata.csv
