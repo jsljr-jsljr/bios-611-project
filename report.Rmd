@@ -17,16 +17,15 @@ High risks and high stakes coupled with the increasing amount of money the movie
 
 The data used in this analysis is derived from IMDB, was put on Kaggle and then hosted on https://github.com/rfordatascience/tidytuesday where I sourced the data from. The data contains information on 3,328 different horror movies. Examples of included properties are genre(s), release date, release country, MPAA rating, and movie run time (in minutes). The data consists of 12 columns, 11 of which pertain to movie properties, and the remaining 1 column pertains to what is considered the outcome in the analysis - the review rating (which ranged from 1 to 10).
 
-The data set was not without missing data and columns of data that needed modification in order to be used for analysis. To begin all observations that had a missing review ratings were removed as it is our outcome of interest. 
-
+The data set was not without missing data and columns of data that needed modification in order to be used for analysis. To begin all observations that had a missing review ratings were removed as it is our outcome of interest. Furthermore, we further subset the data set to include movies whose release country is the United States of America (USA) and whose budget was either missing or was in USA currency. Many movies had multiple genres, so we created a sub_genre variable whose value was the second listed genre of the movie. If the movie only had horror listed as their genre they the sub genre was given the value 'Pure' to indicate that is is pure horror. Another variable was created to created to enumerate the genres for each movie. A usable date variable was derived from the release date variable. Month and year variables were also created.
 
 # Analysis Procedures
 
 
 
-# Conclusion
+# Discussion
 
-
+While there was little determined from this analysis there is much to be explored using the data set. For example the plot variable could be text mined for common words among all plot values. We could then use this variable as feature in the prediction model. The plot variable also contains the director of movies so that could be used as an index for whether a particular movie will be reviewed based on their past history. The same could be done using the cast variable except you apply indices for the cast of the movie. Furthermore, different algorithms could be better suited for prediction. 
 
 # References
 
