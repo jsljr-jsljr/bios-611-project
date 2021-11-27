@@ -20,7 +20,7 @@ hmdata <- read_csv("derived_data/hmdata.csv", show_col_types = FALSE) %>%
   select(-title, -genres, -release_date, -release_country, 
          -plot, -cast, -filming_locations, -budget, -budget_num, -date,
          -movie_lead, -review_rating, -review_rating, -num_of_genres, 
-        -language, -num_of_genres_c6) %>%
+        -language, -num_of_genres_c6, -sub_genre) %>%
   mutate(review_bin = as.factor(review_vs_median)) %>% 
   select(-review_vs_median) %>%
   drop_na()

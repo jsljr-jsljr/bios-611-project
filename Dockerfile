@@ -18,4 +18,4 @@ RUN R -e "install.packages(\"randomForest\")"
 RUN R -e "install.packages(\"webshot\")"
 RUN R -e "webshot::install_phantomjs(force = TRUE)"
 RUN R -e "install.packages(\"plotly\")"
-
+RUN R -e "install.packages(\"PhantomJS\")"
