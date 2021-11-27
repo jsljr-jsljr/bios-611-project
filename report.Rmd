@@ -17,11 +17,15 @@ High risks and high stakes coupled with the increasing amount of money the movie
 
 The data used in this analysis is derived from IMDB, was put on Kaggle and then hosted on https://github.com/rfordatascience/tidytuesday where I sourced the data from. The data contains information on 3,328 different horror movies. Examples of included properties are genre(s), release date, release country, MPAA rating, and movie run time (in minutes). The data consists of 12 columns, 11 of which pertain to movie properties, and the remaining 1 column pertains to what is considered the outcome in the analysis - the review rating (which ranged from 1 to 10).
 
-The data set was not without missing data and columns of data that needed modification in order to be used for analysis. To begin all observations that had a missing review ratings were removed as it is our outcome of interest. Furthermore, we further subset the data set to include movies whose release country is the United States of America (USA) and whose budget was either missing or was in USA currency. Many movies had multiple genres, so we created a sub_genre variable whose value was the second listed genre of the movie. If the movie only had horror listed as their genre they the sub genre was given the value 'Pure' to indicate that is is pure horror. Another variable was created to created to enumerate the genres for each movie. A usable date variable was derived from the release date variable. Month and year variables were also created.
+The data set was not without missing data and columns of data that needed modification in order to be used for analysis. To begin all observations that had a missing review ratings were removed as it is our outcome of interest. Furthermore, we further subset the data set to include movies whose release country is the United States of America (USA) and whose budget was either missing or was in USA currency. Many movies had multiple genres, so we created a sub_genre variable whose value was the second listed genre of the movie. If the movie only had horror listed as their genre they the sub genre was given the value 'Pure' to indicate that is is pure horror. Another variable was created to created to enumerate the genres for each movie. A usable date variable was derived from the release date variable. Month and year variables were also created. To create a binary outcome variable with regards to movie review ratings we took the median of the movie reviews ratings (5 out of 10), then we classified movie as 'bad' (0) if the movie rating was less than 5 and 'good' (1) if the movie rating was greater than 5. 
 
 # Analysis Procedures
 
 ## Exploration
+
+For exploration of the conducting corresponding anova and chi-square tests for each of the variables that would be implemented into the prediction model. We note that chi-square statistics for the number of genres variable and sub-genre variable should be interpreted consciously because the cell sample sizes are smaller than 5 in at least 1 cell. We note that the majority of movies  are not rated by the MPAA or TV Parental Guidelines. Among the movies rated by the MPAA, approximately 80 percent of the movies are rated R, NC-17, or X. Opposed to the 20 percent of MPAA rated movies rated G, PG, and PG-13. A noticeable distinction between movies that are 'bad' and 'good' is that 'bad' movies have an average budget of approximately 1.82 million dollars, while 'good' movies have an average budget of approximately 6.87 million dollars.
+
+In the data set, 502 horror movies were only considered as horror, while the remaining 1313 horror movies were considered to be of the horror genre and at least one other genre. For the sub-genre results we see that the thriller genre is a popular sub-genre of horror movies followed by comedy, drama, and action. Properties regarding the month variable are without surprises. The month of October consisted of the most horror movie releases. Plots are provided in the supplementary section as a means of visualizations for the report.
 
 ![](figures/table_1.png)
 
@@ -34,10 +38,26 @@ The data set was not without missing data and columns of data that needed modifi
 
 While there was little determined from this analysis there is much to be explored using the data set. For example the plot variable could be text mined for common words among all plot values. We could then use this variable as feature in the prediction model. The plot variable also contains the director of movies so that could be used as an index for whether a particular movie will be reviewed based on their past history. The same could be done using the cast variable except you apply indices for the cast of the movie. Furthermore, different algorithms could be better suited for prediction.
 
-M
-
 # References
 
 Moon, S., Bergey, P. K., & Iacobucci, D. (2010). Dynamic Effects among Movie Ratings, Movie Revenues, and Viewer Satisfaction. Journal of Marketing, 74(1), 108–121. http://www.jstor.org/stable/20619083
 
 Peng, L., Cui, G., & Li, C. (2013). The Comparative Impact of Critics and Consumers: Applying the Generalisability Theory to Online Movie Ratings. International Journal of Market Research, 55(3), 413–436. https://doi.org/10.2501/IJMR-2013-037
+
+#Supplementary Figures
+
+![](figures/figure_1.png)
+
+![](figures/figure_2.png)
+
+![](figures/figure_3.png)
+
+![](figures/figure_4.png)
+
+![](figures/figure_5.png)
+
+![](figures/figure_6.png)
+
+![](figures/figure_7.png)
+
+![](figures/figure_8.png)

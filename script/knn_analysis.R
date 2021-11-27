@@ -15,12 +15,12 @@ library(broom);
 library(webshot);
 
 #Creating analysis data set
-hmdata <- read_csv("derived_data/hmdata.csv", show_col_types = FALSE) %>% 
+hmdata <- read_csv("work/derived_data/hmdata.csv", show_col_types = FALSE) %>% 
   distinct(.) %>% 
   select(-title, -genres, -release_date, -release_country, 
          -plot, -cast, -filming_locations, -budget, -budget_num, -date,
          -movie_lead, -review_rating, -review_rating, -num_of_genres, 
-        -language) %>%
+        -language, -num_of_genres_c6) %>%
   mutate(review_bin = as.factor(review_vs_median)) %>% 
   select(-review_vs_median) %>%
   drop_na()
@@ -30,7 +30,7 @@ hmdata_knnFit_1 <- train(review_bin ~.,
                          data = hmdata,
                          method = "knn",
                          preProcess = c("center", "scale"),
-                         tuneLength = 20)
+                         tuneLength = 10)
 knn_fit_100 <- list()
 predicted_knn_fit_outcome_100 <- list()
 accuracy_knn_fit_rates_100 <- list()

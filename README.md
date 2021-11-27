@@ -26,9 +26,13 @@ Example:
 ``docker run --rm -p 8080:8080 -p 8787:8787 -e PASSWORD=hellofuture -v C:/Users/offic/MS/FALL2021/BIOS611/bios-611-project:/home/rstudio/work -t dockerfile``
 
 ## How do I conduct the analysis and construct the report?
-To create the bios-611-project-report pdf, run the following commands in your R terminal. Make sure you are running these commands from the ``/work`` folder once you have brought up the Rstudio image.
+To create the report pdf, run the following commands in your R terminal. Make sure you are running these commands from the ``/work`` folder once you have brought up the Rstudio image.
+
+### Derived Data
 
 ``make derived_data/hmdata.csv``
+
+### Figures and Tables
 
 ``make figures/table_1.png``
 
@@ -51,6 +55,10 @@ To create the bios-611-project-report pdf, run the following commands in your R 
 ``make analysis/knn_table.png``
 
 These commands will create the relevant datasets, figures, and analysis tables. Note that any one of the ``make figures/figure_i.png`` or  ``make figures/table_1.png`` will generate all figures and the table.
+
+### Report
+
+``make report.pdf``
 
 ## How do I construct the Rshiny app?
 
