@@ -17,7 +17,7 @@ library(webshot);
 
 
 #Creating analysis data set
-hmdata <- read_csv("work/derived_data/hmdata.csv", show_col_types = FALSE) %>% 
+hmdata <- read_csv("derived_data/hmdata.csv", show_col_types = FALSE) %>% 
   distinct(.) %>% 
   select(-title, -genres, -release_date, -release_country, 
          -plot, -cast, -filming_locations, -budget, -date,
