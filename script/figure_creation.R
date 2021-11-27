@@ -12,6 +12,7 @@ library(gt);
 library(GGally);
 library(scales);
 library(ggpubr);
+webshot::install_phantomjs()
 library(webshot);
 
 hmdata_5 <- read_csv("derived_data/hmdata.csv", col_types = cols())

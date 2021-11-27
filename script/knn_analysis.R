@@ -12,7 +12,9 @@ library(flextable);
 library(gtsummary);
 library(gt);
 library(broom);
+webshot::install_phantomjs()
 library(webshot);
+
 
 #Creating analysis data set
 hmdata <- read_csv("derived_data/hmdata.csv", show_col_types = FALSE) %>% 
