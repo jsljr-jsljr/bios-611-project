@@ -34,6 +34,9 @@ In the data set, 502 horror movies were only considered as horror, while the rem
 
 ## KNN Analysis
 
+In the KNN Analysis we further subset the derived data set such that any observation that has a missing values for any of the features chosen is removed. Consequently we are left 561 observations. The final features used in the prediction model was movie_rating, movie run time, movie budget, release month, and release year. In Table 3, the mean and standard error are provided for the sensitivity, specificity, recall, precision, and F1-score. The F1-score is used in place of the accuracy because the F1-score is a better metric to use when there is a possibility of imbalanced class distribution. All mean measurements calculated were above .50  but all measurements stayed in the range of approximately 0.54 and 0.61.
+
+![](analysis/knn_table.png)
 # Discussion
 
 While there was little determined from this analysis there is much to be explored using the data set. For example the plot variable could be text mined for common words among all plot values. We could then use this variable as feature in the prediction model. The plot variable also contains the director of movies so that could be used as an index for whether a particular movie will be reviewed based on their past history. The same could be done using the cast variable except you apply indices for the cast of the movie. Furthermore, different algorithms could be better suited for prediction.
