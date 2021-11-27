@@ -12,15 +12,15 @@ library(flextable);
 library(gtsummary);
 library(gt);
 library(broom);
-webshot::install_phantomjs()
+webshot::install_phantomjs(force = TRUE)
 library(webshot);
 
 
 #Creating analysis data set
-hmdata <- read_csv("derived_data/hmdata.csv", show_col_types = FALSE) %>% 
+hmdata <- read_csv("work/derived_data/hmdata.csv", show_col_types = FALSE) %>% 
   distinct(.) %>% 
   select(-title, -genres, -release_date, -release_country, 
-         -plot, -cast, -filming_locations, -budget, -budget_num, -date,
+         -plot, -cast, -filming_locations, -budget, -date,
          -movie_lead, -review_rating, -review_rating, -num_of_genres, 
         -language, -num_of_genres_c6, -sub_genre) %>%
   mutate(review_bin = as.factor(review_vs_median)) %>% 
@@ -33,33 +33,33 @@ hmdata_knnFit_1 <- train(review_bin ~.,
                          method = "knn",
                          preProcess = c("center", "scale"),
                          tuneLength = 10)
-knn_fit_100 <- list()
-predicted_knn_fit_outcome_100 <- list()
-accuracy_knn_fit_rates_100 <- list()
+knn_fit_10 <- list()
+predicted_knn_fit_outcome_10 <- list()
+accuracy_knn_fit_rates_10 <- list()
 knn_table <- list()
 
-tt_knn_indices_100 <- createFolds(y=hmdata$review_bin, k=100)
+tt_knn_indices_10 <- createFolds(y=hmdata$review_bin, k=10)
 
-for(f in 1:length(tt_knn_indices_100)){
-  hmdata_knn_train_100 <- hmdata[-tt_knn_indices_100[[f]],]
-  hmdata_knn_test_100  <- hmdata[tt_knn_indices_100[[f]],]
+for(f in 1:length(tt_knn_indices_10)){
+  hmdata_knn_train_10 <- hmdata[-tt_knn_indices_10[[f]],]
+  hmdata_knn_test_10  <- hmdata[tt_knn_indices_10[[f]],]
   
-  knn_fit_100[[f]] <- train(review_bin ~.,
-                            data = hmdata_knn_train_100,
+  knn_fit_10[[f]] <- train(review_bin ~.,
+                            data = hmdata_knn_train_10,
                             method = "knn",
                             preProcess = c("center", "scale"),
                             tuneGrid = hmdata_knnFit_1$bestTune)
   
-  predicted_knn_fit_outcome_100[[f]] <- predict(knn_fit_100[[f]],
-                                                newdata = hmdata_knn_test_100)
+  predicted_knn_fit_outcome_10[[f]] <- predict(knn_fit_10[[f]],
+                                                newdata = hmdata_knn_test_10)
   
   #Get accuracy rates form output
-  accuracy_knn_fit_rates_100[[f]] <- c(confusionMatrix(predicted_knn_fit_outcome_100[[f]],
-                                                       hmdata_knn_test_100$review_bin, positive = "1")$byClass, "fold"=f)
+  accuracy_knn_fit_rates_10[[f]] <- c(confusionMatrix(predicted_knn_fit_outcome_10[[f]],
+                                                       hmdata_knn_test_10$review_bin, positive = "1")$byClass, "fold"=f)
   
 }
 
-knn_accuracy_df <- data.frame(do.call("rbind", accuracy_knn_fit_rates_100)) %>% select(Sensitivity, Specificity, Recall, Precision, F1)
+knn_accuracy_df <- data.frame(do.call("rbind", accuracy_knn_fit_rates_10)) %>% select(Sensitivity, Specificity, Recall, Precision, F1)
 
 #measure_means <- flextable(as.data.frame(t(sapply(knn_accuracy_df, mean))))
 
